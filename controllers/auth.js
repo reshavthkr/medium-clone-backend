@@ -5,7 +5,7 @@ const {User,validate}  = require('../models/users');
 require('dotenv/config');
 
 const mailgun = require("mailgun-js");
-const DOMAIN = 'sandboxecb66128574c45d58dcd58da19c9ef5f.mailgun.org';
+const DOMAIN = 'sandboxac69721f88764f1ba1b6604486225dc8.mailgun.org';
 const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: DOMAIN});
 
 exports.signup = async(req,res) => {
@@ -25,7 +25,7 @@ exports.signup = async(req,res) => {
   const token = jwt.sign({name,email,password},process.env.JWT_SECRET_KEY, {expiresIn:'30m'});
 
   const data = {
-    from: 'tirthshah147@gmail.com',
+    from: 'reshavthkr@gmail.com',
     to: req.body.email,
     subject: 'Your email is hacked!',
     html: `
